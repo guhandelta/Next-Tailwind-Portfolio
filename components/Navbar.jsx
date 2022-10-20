@@ -51,7 +51,7 @@ const Navbar = () => {
                         <ul key={sno} className="uppercase">
                             <Link href={`#${page}`}>
                                 <li className="py-4 text-sm">{page}</li>
-                            </Link>
+                             </Link>
                         </ul>
                     )}
                     <div className="pt-10">
