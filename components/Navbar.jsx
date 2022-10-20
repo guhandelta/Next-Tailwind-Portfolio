@@ -2,9 +2,11 @@ import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 
-import { AiOutlineClose, AiOutlineMenu, AiOutlineMail } from 'react-icons/ai'
-import { FaLinkedinIn, FaGithub } from 'react-icons/fa'
-import { BsFillPersonLinesFill } from 'react-icons/bs'
+import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
+
+
+import { Pages, SocialMediaIcons } from './Const'
+
 
 const Navbar = () => {
 
@@ -17,28 +19,18 @@ const Navbar = () => {
         <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
             {/* Relative image path should start with a / */}
             <Image src="/../public/assets/navLogo.png" alt="/" width='50' height='50' />
-            <div>
-                <ul className="hidden md:flex">
-                    <Link href="/">
-                        <li className="ml-10 text-sm uppercase hover:border-b">Home</li>
-                    </Link>
-                    <Link href="/">
-                        <li className="ml-10 text-sm uppercase hover:border-b">About</li>
-                    </Link>
-                    <Link href="/">
-                        <li className="ml-10 text-sm uppercase hover:border-b">Skills</li>
-                    </Link>
-                    <Link href="/">
-                        <li className="ml-10 text-sm uppercase hover:border-b">Projects</li>
-                    </Link>
-                    <Link href="/">
-                        <li className="ml-10 text-sm uppercase hover:border-b">Contact</li>
-                    </Link>
-                </ul>
-                <div onClick={handleNav} className="md:hidden">
-                    <AiOutlineMenu size={25} />
+            {Pages.map(({ page, sno })=>
+                <div key={sno}>            
+                    <ul className="hidden md:flex">
+                        <Link href={`#${page}`}>
+                            <li className="ml-10 text-sm uppercase hover:border-b">{page}</li>
+                        </Link>
+                    </ul>
+                    <div onClick={handleNav} className="md:hidden">
+                        <AiOutlineMenu size={25} />
+                    </div>
                 </div>
-            </div>
+            )}
         </div>
 
         <div className={ nav ? "md:hidden fixed left-0 top-0 w-full h-screen bg-black/70 ease-in duration-500" : '' }>
@@ -55,39 +47,22 @@ const Navbar = () => {
                     </div> */}
                </div> 
                <div className="py-4 flex flex-col">
-                    <ul className="uppercase">
-                        <Link href="/">
-                            <li className="py-4 text-sm">Home</li>
-                        </Link>
-                        <Link href="/">
-                            <li className="py-4 text-sm">About</li>
-                        </Link>
-                        <Link href="/">
-                            <li className="py-4 text-sm">Skills</li>
-                        </Link>
-                        <Link href="/">
-                            <li className="py-4 text-sm">Projects</li>
-                        </Link>
-                        <Link href="/">
-                            <li className="py-4 text-sm">Contact</li>
-                        </Link>
-                    </ul>
+                    {Pages.map(({ page, sno })=>
+                        <ul key={sno} className="uppercase">
+                            <Link href={`#${page}`}>
+                                <li className="py-4 text-sm">{page}</li>
+                            </Link>
+                        </ul>
+                    )}
                     <div className="pt-10">
                         <p className="uppercase tracking-widest text-[#5651e5]">Let us connect</p>
-                        <div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
-                            <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                                <FaLinkedinIn />
+                        {SocialMediaIcons.map(({ icon, sno })=>
+                            <div key={sno} className="flex items-center justify-between my-4 w-full sm:w-[80%]">
+                                <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
+                                    {icon}
+                                </div>
                             </div>
-                            <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                                <FaGithub />
-                            </div>
-                            <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                                <AiOutlineMail />
-                            </div>
-                            <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                                <BsFillPersonLinesFill />
-                            </div>
-                        </div>
+                        )}
                     </div>
                </div>
             </div>
