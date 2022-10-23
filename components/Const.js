@@ -189,3 +189,36 @@ export const Experiences = [
         'logoImage':'/../public/assets/projects/wvaquavit.png'
     }
 ]
+
+export const GitHubProjects = [
+    {
+        'sno':1,
+        'appName': 'Portfolio',
+        'codeBase': 'https://github.com/guhandelta/Next-React-Node-Portfolio',
+        'appUrl': 'https://guhaprasaanth.com'
+    },
+    {
+        'sno':2,
+        'appName': 'Covid Tracker',
+        'codeBase': 'https://github.com/guhandelta/ReactCovid19Tracker',
+        'appUrl': 'https://ngp-react-covid19-info.netlify.app/'
+    },
+    {
+        'sno':3,
+        'appName': 'Rewct Cryptocurrency Dashboard',
+        'codeBase': 'https://github.com/guhandelta/ReactCryptoCurrencyDashboard',
+        'appUrl': 'https://ngp-react-cryptocurerncy-dashboard.netlify.app/'
+    },
+    {
+        'sno':4,
+        'appName': 'Gatsby Coffee Shop',
+        'codeBase': 'https://github.com/guhandelta/GatsbyCoffeeShop',
+        'appUrl': 'https://ngp-gatsby-coffeeshop.netlify.app/'
+    },
+    {
+        'sno':5,
+        'appName': 'Gatsby Restaurant',
+        'codeBase': 'https://github.com/guhandelta/GatsbyRestaurant',
+        'appUrl': 'https://ngp-gatsby-restaurant.netlify.app/'
+    },
+]

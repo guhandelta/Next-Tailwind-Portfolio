@@ -4,9 +4,9 @@ import { SkillStore } from './Const'
 
 const Skills = () => {
   return (
-    <div className="w-full lg h-screen p-2" id="Skills">
-        <div className="max-w-[1240] mx-auto flex flex-col justify-center h-full">
-            <p className="text-3xl text-center tracking-widget uppercase text-[#56521e5]">Skills</p>
+    <div className="w-full lg:h-screen p-2" id="Skills">
+        <div className="max-w-[1240px] mx-auto flex flex-col justify-center h-full">
+            <p className="text-3xl text-center tracking-widget uppercase text-[#5651e5]">Skills</p>
             <h2 className="py-4 text-2xl text-center">What I can do</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {SkillStore.map(({sno, name, image})=><>

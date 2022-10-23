@@ -1,7 +1,4 @@
-
-import { AiOutlineMail } from 'react-icons/ai'
-import { FaLinkedinIn, FaGithub } from 'react-icons/fa'
-import { BsFillPersonLinesFill } from 'react-icons/bs'
+import SocailMediaIcons from './SocailMediaIcons'
 
 const Main = () => {
   return (
@@ -14,18 +11,7 @@ const Main = () => {
                 <p className="py-4 text-gray-600 max-w-[70%] m-auto">I’m focused on building responsive front-end web applications
                 using ReactJS and integrating it with back-end technologies.</p>
                 <div className="flex items-center justify-between max-w-[330px] m-auto py-4">
-                    <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
-                        <FaLinkedinIn />
-                    </div>
-                    <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
-                        <FaGithub />
-                    </div>
-                    <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
-                        <AiOutlineMail />
-                    </div>
-                    <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
-                        <BsFillPersonLinesFill />
-                    </div>  
+                    <SocailMediaIcons />
                 </div>
             </div>
         </div>
