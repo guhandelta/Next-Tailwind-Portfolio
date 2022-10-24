@@ -1,21 +1,33 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 
 
-import { Pages, SocialMediaIcons } from './Const'
+import { Pages, SocialMediaIconsList } from './Const'
 
 
 const Navbar = () => {
 
     const [nav, setNav] = useState(false);
+    const [shadow, setShadow] = useState(false);
 
     const handleNav = () => { setNav(!nav) }
 
+    useEffect(() => {
+        const handleShadow = () => {
+            if(window.scrollY >= 90){
+                setShadow(true)
+            }else{
+                setShadow(false)
+            }
+        };
+        window.addEventListener('scroll', handleShadow);
+    }, [])
+
   return (
-    <div className="fixed w-full h-20 shadow-xl z-[100]">
+    <div className={ shadow ? "fixed w-full h-20 shadow-xl z-[100] bg-white" : "fixed w-full h-20 z-[100] bg-white" }>
         <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
             {/* Relative image path should start with a / */}
             <Image src="/../public/assets/navLogo.png" alt="/" width='50' height='50' />
@@ -23,7 +35,7 @@ const Navbar = () => {
                 <div key={sno}>            
                     <ul className="hidden md:flex">
                         <Link href={`#${page}`}>
-                            <li className="ml-10 text-sm uppercase hover:border-b">{page}</li>
+                            <li className="ml-10 text-sm uppercase hover:font-anurati hover:border-b">{page}</li>
                         </Link>
                     </ul>
                     <div onClick={handleNav} className="md:hidden">
@@ -49,14 +61,14 @@ const Navbar = () => {
                <div className="py-4 flex flex-col">
                     {Pages.map(({ page, sno })=>
                         <ul key={sno} className="uppercase">
-                            <Link href={`#${page}`}>
+                            <Link href={`/#${page}`}>
                                 <li className="py-4 text-sm">{page}</li>
                              </Link>
                         </ul>
                     )}
                     <div className="pt-10">
                         <p className="uppercase tracking-widest text-[#5651e5]">Let us connect</p>
-                        {SocialMediaIcons.map(({ icon, sno })=>
+                        {SocialMediaIconsList.map(({ icon, sno })=>
                             <div key={sno} className="flex items-center justify-between my-4 w-full sm:w-[80%]">
                                 <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
                                     {icon}

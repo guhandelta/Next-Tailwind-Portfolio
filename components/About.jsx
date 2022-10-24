@@ -5,8 +5,8 @@ const About = () => {
     <div className="w-full md:h-screen p-2 flex items-center py-16" id="About">
         <div className="max-w-[1240px] m-auto md:grid grid-cols-3 gap-8">
             <div className="col-span-2">
-                <p className="uppercase text-3xl text-center tracking-widest text-[#561e5]">About Me</p>
-                <h2 className="py-4 text-2xl text-center">Who I am</h2>
+                <p className="uppercase text-3xl text-center tracking-widest hover:font-anurati text-[#5651e5]">About Me</p>
+                <h2 className="py-4 text-2xl hover:font-anurati text-center">Who I am</h2>
                 <p className="py-2 text-gray-600">I&#39;m not a Normal Programmer</p>
                 <p className="py-2 text-gray-600">
                     I specialize in building mobile responsive front-end UI applications

@@ -8,10 +8,10 @@ const Contact = () => {
   return (
     <div className="w-full lg:h-screen" id="Contact">
         <div className="max-w-[1240px] m-auto py-16 w-full">
-            <p className="text-xl tracking-widest uppercase text-[#5651e5]">
+            <p className="text-3xl tracking-widest hover:font-anurati uppercase text-center text-[#5651e5]">
                 Contact
             </p>
-            <h2 className="py-4">Get in Touch</h2>
+            <h2 className=" text-2xl text-center hover:font-anurati">Get in Touch</h2>
                 <div className="grid lg:grid-cols-5 gap-8">
             
                 {/*left*/}

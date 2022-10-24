@@ -1,21 +1,16 @@
-import { AiOutlineMail } from 'react-icons/ai'
-import { FaLinkedinIn, FaGithub } from 'react-icons/fa'
-import { BsFillPersonLinesFill } from 'react-icons/bs'
+import Link from 'next/link'
 
-const SocailMediaIcons = () =>( <>
+import { SocialMediaIconsList } from './Const'
 
-        <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
-            <FaLinkedinIn />
-        </div>
-        <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
-            <FaGithub />
-        </div>
-        <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
-            <AiOutlineMail />
-        </div>
-        <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
-            <BsFillPersonLinesFill />
-        </div>  
-</>)
+const SocailMediaIcons = () =>( 
 
+        SocialMediaIconsList.map(({ sno, icon, url }) => 
+            <div key={sno} className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300">
+                <Link to={url} href={url}>
+                    <a target="_blank" rel="noopener noreferrer">{icon}</a>
+                </Link>
+            </div>
+        )
+)
+    
 export default SocailMediaIcons

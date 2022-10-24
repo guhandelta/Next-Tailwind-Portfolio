@@ -8,8 +8,8 @@ const Experience = () => {
   return (
     <div className="w-full" id="Portfolio">
         <div className="max-w-1240px mx-auto px-2 py-16">
-            <p className="text-3xl text-center tracking-widest uppercase text-5651e5">Experience</p>
-            <h2 className="py-4 text-2xl text-center">My Portfolio</h2>
+            <p className="text-3xl text-center tracking-widest uppercase text-[#5651e5] hover:font-anurati">Experience</p>
+            <h2 className="py-4 text-2xl text-center hover:font-anurati">My Portfolio</h2>
             <div className="grid md grid-cols-2 gap-8">
                 {/* bg-gradient-to-r => defines a horizontal linear gradient (HLG) from left to right */}
                 {Experiences.map(({ sno, title, description, techStack, timePeriod, logoImage }) => 

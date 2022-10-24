@@ -88,22 +88,26 @@ export const Pages = [
     },
 ]
 
-export const SocialMediaIcons = [
+export const SocialMediaIconsList = [
     {
         'sno':1,
-        'icon': <FaLinkedinIn />
+        'icon': <FaLinkedinIn />,
+        'url':'https://linkedin.com/in/guhaprasaanthnandagopal'
     },
     {
         'sno':2,
-        'icon': <FaGithub />
+        'icon': <FaGithub />,
+        'url':'https://github.com/guhandelta'
     },
     {
         'sno':3,
-        'icon': <AiOutlineMail />
+        'icon': <AiOutlineMail />,
+        'url':'mailto:guhan.delta@gmail.com'
     },
     {
         'sno':4,
-        'icon': <BsFillPersonLinesFill />
+        'icon': <BsFillPersonLinesFill />,
+        'url':'https://guhaprasaanth.com'
     },
 ]
 
